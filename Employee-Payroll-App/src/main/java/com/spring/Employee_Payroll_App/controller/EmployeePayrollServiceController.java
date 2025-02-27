@@ -21,12 +21,12 @@ public class EmployeePayrollServiceController {
     private EmployeePayrollService employeePayrollService;
 
 
-
     @GetMapping(value = {"", "/"})
     public String getEmployeePayrollByDefault(){
         log.info("Getting employee payroll by default");
         return "Get Employee payroll default route";
     }
+
 
     @GetMapping("/get/{name}")
     public EmployeePayroll getEmployeePayrollByName(@PathVariable String name){
@@ -50,6 +50,16 @@ public class EmployeePayrollServiceController {
         EmployeePayroll newEmployeePayroll = employeePayrollService.createEmployeePayroll(employeePayroll);
         log.info("new employee payroll created using employee payroll dto is {}", newEmployeePayroll);
         return newEmployeePayroll;
+
+    }
+
+    @PutMapping("/update")
+    public EmployeePayroll updateEmployeePayroll(@RequestBody EmployeePayrollDto employeePayrollDto){
+        log.info("updating employee payroll using employee payroll dto {}", employeePayrollDto);
+        EmployeePayroll updatedEmployeePayroll = employeePayrollService.updateEmployeePayroll(employeePayrollDto);
+        log.info("updated employee payroll using employee payroll dto is {}", updatedEmployeePayroll);
+        return updatedEmployeePayroll;
+
     }
 
     @PutMapping("/update")
@@ -73,6 +83,7 @@ public class EmployeePayrollServiceController {
     public String updateEmployeePayroll(@RequestBody EmployeePayroll employeePayroll){
         return "Update Employee payroll for name: "+employeePayroll.getName()+" and salary as "+employeePayroll.getSalary();
 
+
     }
 
     @DeleteMapping("/delete/{id}")
@@ -82,6 +93,7 @@ public class EmployeePayrollServiceController {
         String deletedResponse = employeePayrollService.deleteEmployeePayrollById(Long.parseLong(id));
         if(!deletedResponse.isEmpty()) log.info("deleted employee payroll");
         return deletedResponse;
+
 
         return employeePayrollService.deleteEmployeePayrollById(String.valueOf(Long.parseLong(id)));
 
