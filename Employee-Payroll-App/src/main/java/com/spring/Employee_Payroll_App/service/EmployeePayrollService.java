@@ -13,6 +13,7 @@ public class EmployeePayrollService {
 
     private final List<EmployeePayroll> employeePayrolls = new ArrayList<>();
 
+
     public EmployeePayroll getEmployeePayrollById(Long id) {
         for (EmployeePayroll employeePayroll : employeePayrolls) {
             if (employeePayroll.getId() == id) {
@@ -22,6 +23,18 @@ public class EmployeePayrollService {
         return null;
     }
 
+    public EmployeePayroll getEmployeePayrollByName(String name) {
+        for (EmployeePayroll employeePayroll : employeePayrolls) {
+            if (employeePayroll.getName().equals(name)) {
+                return employeePayroll;
+            }
+        }
+        return null;
+    }
+
+    public List<EmployeePayroll> getEmployeePayrolls(){
+        return employeePayrolls;
+    }
     public EmployeePayroll createEmployeePayroll(EmployeePayrollDto employeePayrollDto) {
         EmployeePayroll newEmployeePayroll = new EmployeePayroll(employeePayrollDto.getName(), employeePayrollDto.getSalary());
         employeePayrolls.add(newEmployeePayroll);
