@@ -1,6 +1,7 @@
 package com.spring.Employee_Payroll_App.service;
 
 
+
 import com.spring.Employee_Payroll_App.dto.EmployeePayrollDto;
 import com.spring.Employee_Payroll_App.model.EmployeePayroll;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,19 @@ public class EmployeePayrollService {
             }
         }
         return null;
+    }
+
+    public EmployeePayroll getEmployeePayrollByName(String name) {
+        for (EmployeePayroll employeePayroll : employeePayrolls) {
+            if (employeePayroll.getName().equals(name)) {
+                return employeePayroll;
+            }
+        }
+        return null;
+    }
+
+    public List<EmployeePayroll> getEmployeePayrolls(){
+        return employeePayrolls;
     }
 
     public EmployeePayroll createEmployeePayroll(EmployeePayrollDto employeePayrollDto) {
