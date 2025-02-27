@@ -14,7 +14,6 @@ public class EmployeePayrollService {
 
     private final List<EmployeePayroll> employeePayrolls = new ArrayList<>();
 
-
     public EmployeePayroll getEmployeePayrollById(Long id) {
         for (EmployeePayroll employeePayroll : employeePayrolls) {
             if (employeePayroll.getId() == id) {

@@ -1,8 +1,14 @@
 package com.spring.Employee_Payroll_App.model;
 
-
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "employee_payrolls")
 public class EmployeePayroll {
@@ -11,7 +17,12 @@ public class EmployeePayroll {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    //    @NotNull
+//    @Size(min = 2, message = "Name should be atleast 2 characters long")
+//    @Pattern(regexp = "[A-Za-z]", message = "Name should contain only alphabets")
     private String name;
+
+    //    @NotNull
     private double salary;
 
     public EmployeePayroll() {}
@@ -27,27 +38,4 @@ public class EmployeePayroll {
         this.salary = salary;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 }
