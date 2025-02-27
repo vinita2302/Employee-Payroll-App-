@@ -22,12 +22,6 @@ public class EmployeePayrollServiceController {
     @Autowired
     private EmployeePayrollService employeePayrollService;
 
-    @GetMapping(value = {"", "/"})
-    public String getEmployeePayrollByDefault(){
-        log.info("Getting employee payroll by default");
-        return "Get Employee payroll default route";
-    }
-
     @GetMapping("/get/{name}")
     public EmployeePayroll getEmployeePayrollByName(@PathVariable String name){
         log.info("Getting employee payroll of name {}", name);
