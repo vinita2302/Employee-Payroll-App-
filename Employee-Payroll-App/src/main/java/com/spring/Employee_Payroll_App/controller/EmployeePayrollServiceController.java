@@ -1,5 +1,7 @@
 package com.spring.Employee_Payroll_App.controller;
 
+import com.spring.Employee_Payroll_App.dto.EmployeePayrollDto;
+import com.spring.Employee_Payroll_App.model.EmployeePayroll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +12,7 @@ import java.util.List;
 public class EmployeePayrollServiceController {
 
     @Autowired
-    private EmployeePayrollService employeePayrollService;
+    private EmployeePayrollServiceController employeePayrollService;
 
     @GetMapping(value = {"", "/"})
     public String getEmployeePayrollByDefault(){
@@ -39,7 +41,7 @@ public class EmployeePayrollServiceController {
 
     @DeleteMapping("/delete/{id}")
     public String deleteEmployeePayrollById(@PathVariable String id){
-        return employeePayrollService.deleteEmployeePayrollById(Long.parseLong(id));
+        return employeePayrollService.deleteEmployeePayrollById(String.valueOf(Long.parseLong(id)));
     }
 
 }
