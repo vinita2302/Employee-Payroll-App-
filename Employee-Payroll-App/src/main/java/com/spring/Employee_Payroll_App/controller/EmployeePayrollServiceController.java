@@ -7,7 +7,6 @@ import com.spring.Employee_Payroll_App.service.EmployeePayrollService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.spring.Employee_Payroll_App.model.EmployeePayroll;
 
 import org.springframework.web.bind.annotation.*;
 
