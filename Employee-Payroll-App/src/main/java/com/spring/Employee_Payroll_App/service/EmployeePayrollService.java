@@ -1,7 +1,6 @@
 package com.spring.Employee_Payroll_App.service;
 
 
-
 import com.spring.Employee_Payroll_App.dto.EmployeePayrollDto;
 import com.spring.Employee_Payroll_App.model.EmployeePayroll;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,6 @@ import java.util.List;
 public class EmployeePayrollService {
 
     private final List<EmployeePayroll> employeePayrolls = new ArrayList<>();
-
 
     public EmployeePayroll getEmployeePayrollById(Long id) {
         for (EmployeePayroll employeePayroll : employeePayrolls) {
