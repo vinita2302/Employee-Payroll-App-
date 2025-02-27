@@ -1,6 +1,7 @@
 package com.spring.Employee_Payroll_App.service;
 
 
+
 import com.spring.Employee_Payroll_App.dto.EmployeePayrollDto;
 import com.spring.Employee_Payroll_App.model.EmployeePayroll;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,7 @@ public class EmployeePayrollService {
     public List<EmployeePayroll> getEmployeePayrolls(){
         return employeePayrolls;
     }
+
     public EmployeePayroll createEmployeePayroll(EmployeePayrollDto employeePayrollDto) {
         EmployeePayroll newEmployeePayroll = new EmployeePayroll(employeePayrollDto.getName(), employeePayrollDto.getSalary());
         employeePayrolls.add(newEmployeePayroll);
