@@ -23,6 +23,14 @@ public class EmployeePayroll {
     private String name;
 
     //    @NotNull
+
+     @NotNull
+ @Size(min = 2, message = "Name should be atleast 2 characters long")
+   @Pattern(regexp = "[A-Za-z]", message = "Name should contain only alphabets")
+    private String name;
+
+       @NotNull
+
     private double salary;
 
     public EmployeePayroll() {}
